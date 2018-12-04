@@ -12,6 +12,5 @@ urlpatterns=[
     url(r'^user_login/$', views.user_login, name='user_login'),
     url(r'^chat_view/$', views.chat_view, name='chat_view'),
 ]
-
 urlpatterns += staticfiles_urlpatterns()
 

@@ -1,177 +1,158 @@
-{% load static from staticfiles %}
-<!DOCTYPE html>
+{% load staticfiles%}
 <html>
-<!-- Head -->
 <head>
-
-	<title>Friends Chat History Widget A Flat Responsive Widget Template :: w3layouts</title>
-
-	<!-- For-Mobile-Apps -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="keywords" content="Friends Chat History Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- //For-Mobile-Apps -->
-
-	<!-- Style --> <link rel="stylesheet" href={% static "css/chat.css" %} type="text/css" media="all">
-    <link rel="shortcut icon" href={% static "favicon.ico" %}>
-
-	<!-- Web-Fonts -->
-		<link href='//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-	<!-- //Web-Fonts -->
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href={%static "talko/style.css" %}>
+    <link rel="shortcut icon" href="{% static 'talko/favicon/favicon.png' %}"/>
 </head>
-<!-- //Head -->
-
-<!-- Body -->
 <body>
+<div class="container">
+<h3 class=" text-center">Messaging</h3>
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4>Recent</h4>
+            </div>
+            <div class="srch_bar">
+              <div class="stylish-input-group">
+                <input type="text" class="search-bar"  placeholder="Search" >
+                <span class="input-group-addon">
+                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                </span> </div>
+            </div>
+          </div>
+          <div class="inbox_chat">
+            <div class="chat_list active_chat">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mesgs">
+          <div class="msg_history">
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>Test which is a new approach to have all
+                    solutions</p>
+                  <span class="time_date"> 11:01 AM    |    June 9</span></div>
+              </div>
+            </div>
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>Test which is a new approach to have all
+                  solutions</p>
+                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+            </div>
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>Test, which is a new approach to have</p>
+                  <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+              </div>
+            </div>
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>Apollo University, Delhi, India Test</p>
+                <span class="time_date"> 11:01 AM    |    Today</span> </div>
+            </div>
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>We work directly with our designers and suppliers,
+                    and sell direct to you, which means quality, exclusive
+                    products, at a price anyone can afford.</p>
+                  <span class="time_date"> 11:01 AM    |    Today</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input type="text" class="write_msg" placeholder="Type a message" />
+              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	<h1>FRIENDS CHAT HISTORY WIDGET</h1>
 
-	<div class="container w3layouts agileits">
+      <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
 
-		<div id="chatbox">
-
-			<div id="friendslist">
-
-				<div id="topmenu">
-					<span class="friends">CONTACTS</span>
-				</div>
-
-				<div id="friends">
-
-					<div class="friend w3layouts">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<p>
-							<strong>Bucky Barnes</strong>
-							<span>wintersoldier@gmail.com</span>
-						</p>
-						<div class="status available"></div>
-					</div>
-
-					<div class="friend">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<p>
-							<strong>Steve Rogers</strong>
-							<span>captainamerica@gmail.com</span>
-						</p>
-						<div class="status away"></div>
-					</div>
-
-					<div class="friend">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<p>
-							<strong>Sam Wilson</strong>
-							<span>flyingfalcon@gmail.com</span>
-						</p>
-						<div class="status inactive"></div>
-					</div>
-
-					<div class="friend">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<p>
-							<strong>Natasha Romanoff</strong>
-							<span>blackwidow@gmail.com</span>
-						</p>
-						<div class="status inactive"></div>
-					</div>
-
-					<div class="friend agileits">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<p>
-							<strong>Tony Stark</strong>
-							<span>imironman4u@gmail.com</span>
-						</p>
-						<div class="status inactive"></div>
-					</div>
-
-					<div id="search">
-						<input type="text" id="searchfield" value="Search contacts...">
-					</div>
-
-				</div>
-
-			</div>
-
-			<div id="chatview" class="p1">
-
-				<div id="profile">
-					<div id="close">
-						<div class="cy"></div>
-						<div class="cx"></div>
-					</div>
-					<p>Bucky Barnes</p>
-					<span>wintersoldier@gmail.com</span>
-				</div>
-
-				<div id="chat-messages">
-
-					<label>Monday 01</label>
-
-					<div class="message w3layouts">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<div class="bubble">
-							Why are you protecting me?
-							<span>4 min</span>
-						</div>
-					</div>
-
-					<div class="message right agileits">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<div class="bubble">
-							Coz you're my best friend
-							<span>3 min</span>
-						</div>
-					</div>
-
-					<div class="message">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<div class="bubble">
-							I don't remember you
-							<span>2 Min</span>
-						</div>
-					</div>
-
-					<div class="message right w3layouts">
-						<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<div class="bubble">
-							But I remember you
-							<span>1 Min</span>
-						</div>
-					</div>
-
-					<div class="message">
-                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-						<div class="bubble">
-							Well, okay!
-							<span>Now</span>
-						</div>
-					</div>
-
-				</div>
-
-				<div id="sendmessage">
-					<input type="text" value="Send message...">
-					<button id="send"></button>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="footer w3layouts agileits">
-		<p> &copy; 2016 Friends Chat History Widget. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank"> W3layouts </a></p>
-	</div>
-
-	<!-- Custom-JavaScript-File-Links -->
-		<!-- Default-JavaScript --> <script src={% static "js/jquery.min.js" %}></script>
-		<!-- Tabs-JavaScript -->    <script src={% static "js/tabs.js" %}></script>
-	<!-- //Custom-JavaScript-File-Links -->
-
-</body>
-<!-- //Body -->
-
+    </div>
+</div>
+    </body>
 </html>
