@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
+from django.core.serializers import serialize
 
 from .form import UserForm
 from django.contrib.auth import authenticate, login, logout
@@ -73,10 +74,11 @@ def chat_view(request):
 @csrf_exempt
 def create_msg(request):
     if request.method == "POST":
-        msg = request.POST.get('msgtxt', None)
-        c = Message(user=request.user, message=msg)
+        recver= User.objects.get(username='mhassan')
+        msg = request.POST.get('msgtxt')
+        c = Message(sender=request.user, reciever=recver, text=msg)
         if msg != '':
             c.save()
-        return JsonResponse({'msg': msg, 'user': c.user.username})
+        return serialize({'msg': msg, 'sender': c.sender, 'reciever':recver})
     else:
         return HttpResponse('Request must be POST.')
