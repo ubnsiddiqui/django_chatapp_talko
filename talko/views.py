@@ -79,6 +79,7 @@ def create_msg(request):
         c = Message(sender=request.user, reciever=recver, text=msg)
         if msg != '':
             c.save()
-        return serialize({'msg': msg, 'sender': c.sender, 'reciever':recver})
+        msg_data = {'id': c.id, 'sender': c.sender_id, 'receiver': c.receiver, 'text': c.text}
+        return JsonResponse(msg_data)
     else:
         return HttpResponse('Request must be POST.')
