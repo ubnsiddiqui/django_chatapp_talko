@@ -25,7 +25,7 @@ SECRET_KEY = 'z+iup^s_dirb!!c^kxudv%*6^kny0@lk3z=r14t^d!(_p+aojj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.sites',
     'talko',
 ]
 

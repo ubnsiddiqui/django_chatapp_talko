@@ -2,20 +2,72 @@
 {% load staticfiles %}
 
 {% block body_block %}
-  <div class="container">
+{#  <form class="form" method="post" action="{% url 'talko:user_login' %}">#}
+{#  {% csrf_token %}#}
+{#              <div class="card-header text-center">#}
+{#                <div class="logo-container">#}
+{#                  <img src="{% static 'img/now-logo.png' %}" alt="">#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="card-body">#}
+{#                <div class="input-group no-border input-lg">#}
+{#                  <div class="input-group-prepend">#}
+{#                    <span class="input-group-text">#}
+{#                      <i class="users_circle-08"></i>#}
+{#                    </span>#}
+{#                  </div>#}
+{#                  <input type="text" class="form-control" placeholder="Username">#}
+{#                </div>#}
+{#                  <div class="input-group no-border input-lg">#}
+{#                  <div class="input-group-prepend">#}
+{#                    <span class="input-group-text">#}
+{#                      <i class="text_caps-small"></i>#}
+{#                    </span>#}
+{#                  </div>#}
+{#                  <input type="text" placeholder="First Name" class="form-control" />#}
+{#                </div>#}
+{#                  <div class="input-group no-border input-lg">#}
+{#                  <div class="input-group-prepend">#}
+{#                    <span class="input-group-text">#}
+{#                      <i class="text_caps-small"></i>#}
+{#                    </span>#}
+{#                  </div>#}
+{#                  <input type="text" placeholder="Last Name" class="form-control" />#}
+{#                </div>#}
+{#                <div class="input-group no-border input-lg">#}
+{#                  <div class="input-group-prepend">#}
+{#                    <span class="input-group-text">#}
+{#                      <i class="text_caps-small"></i>#}
+{#                    </span>#}
+{#                  </div>#}
+{#                  <input type="text" placeholder="Password" class="form-control" />#}
+{#                </div>#}
+{#                  <div class="input-group no-border input-lg">#}
+{#                  <div class="input-group-prepend">#}
+{#                    <span class="input-group-text">#}
+{#                      <i class="text_caps-small"></i>#}
+{#                    </span>#}
+{#                  </div>#}
+{#                  <input type="text" placeholder="Email" class="form-control" />#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="card-footer text-center">#}
+{#                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block" type="submit">Register</a>#}
+{#              </div>#}
+{#            </form>#}
+    <div class="container">
     <div class="jumbotron">
       {% if registered %}
         <h1>Thank you for registering!</h1>
       {% else %}
-        <h1>Register Here</h1>
-        <h3>Just fill out the form.</h3>
-
 <form enctype="multipart/form-data" method="POST">
           {% csrf_token %}
-          {{ user_form.as_p }}
+          <div class="form-group">
+                {{ user_form.as_ul }}
           <input type="submit" name="" value="Register">
+          </div>
         </form>
-        
+
       {% endif %}
     </div>
   </div>

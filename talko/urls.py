@@ -7,10 +7,10 @@ from talko import views
 app_name = 'talko'
 
 # Be careful setting the name to just /login use userlogin instead!
-urlpatterns=[
+urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^user_login/$', views.user_login, name='user_login'),
     url(r'^chat_view/$', views.chat_view, name='chat_view'),
+    url(r'^create_message/$', views.create_msg, name='create_msg'),
+    url(r'^index/$', views.index, name='index'),
 ]
-urlpatterns += staticfiles_urlpatterns()
-

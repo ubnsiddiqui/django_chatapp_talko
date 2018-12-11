@@ -1,9 +1,14 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+
 from .form import UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from talko.models import Message
 
 
 def index(request):
@@ -39,6 +44,7 @@ def register(request):
                            'registered': registered})
 
 
+@csrf_exempt
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -56,5 +62,21 @@ def user_login(request):
         return render(request, 'talko/login.html', {})
 
 
+@login_required
 def chat_view(request):
-    return render(request, 'talko/chat.html')
+    user = User.objects.all()
+    logusr = request.user
+    return render(request, 'talko/chat.html', {"users": user, 'loginuser': logusr})
+
+
+@login_required
+@csrf_exempt
+def create_msg(request):
+    if request.method == "POST":
+        msg = request.POST.get('msgtxt', None)
+        c = Message(user=request.user, message=msg)
+        if msg != '':
+            c.save()
+        return JsonResponse({'msg': msg, 'user': c.user.username})
+    else:
+        return HttpResponse('Request must be POST.')
