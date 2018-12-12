@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^special/', views.special, name='special'),
     url(r'^talko/', include('talko.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),
-    url(r'^chat_view/$', views.chat_view, name='chat_view'),
+url(r'^chat_view/$', views.chat_view1, name='chat_view'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

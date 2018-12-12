@@ -1,0 +1,17 @@
+<ul>
+    {% for msg in msgdata %}
+        {% if msg.sender != request.user %}
+            <li class="sent">
+                <img src="http://emilcarlsson.se/assets/mikeross.png" alt=""/>
+                <p>{{ msg.text }}</p>
+{#                <sub>{{ msg.date }}</sub>#}
+            </li>
+        {% elif msg.sender == request.user %}
+            <li class="replies">
+                <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt=""/>
+                <p>{{ msg.text }}</p>
+{#                <sub>{{ msg.date }}</sub>#}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

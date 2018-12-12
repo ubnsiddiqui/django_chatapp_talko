@@ -1,8 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from django.core.serializers import serialize
-
+from django.db.models import Q
 from .form import UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -13,7 +12,7 @@ from talko.models import Message
 
 
 def index(request):
-    return render(request,'talko/index.html')
+    return render(request, 'talko/index.html')
 
 
 @login_required
@@ -40,9 +39,9 @@ def register(request):
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request,'talko/registration.html',
-                          {'user_form': user_form,
-                           'registered': registered})
+    return render(request, 'talko/registration.html',
+                  {'user_form': user_form,
+                   'registered': registered})
 
 
 @csrf_exempt
@@ -64,22 +63,40 @@ def user_login(request):
 
 
 @login_required
-def chat_view(request):
-    user = User.objects.all()
+def chat_view1(request):
+    user = User.objects.all().exclude(id=request.user.id)
     logusr = request.user
+    # recevr = User.objects.get(username='mhassan')
     return render(request, 'talko/chat.html', {"users": user, 'loginuser': logusr})
+
+
+@login_required
+def chat_view2(request, receiver):
+    user = User.objects.all().exclude(id=request.user.id)
+    logusr = request.user
+    recevr = int(receiver)
+    return render(request, 'talko/chat.html', {"users": user, 'loginuser': logusr, "reciever": recevr})
 
 
 @login_required
 @csrf_exempt
 def create_msg(request):
     if request.method == "POST":
-        recver= User.objects.get(username='mhassan')
+        # recver= User.objects.get(username='musama')
         msg = request.POST.get('msgtxt')
-        c = Message(sender=request.user, reciever=recver, text=msg)
+        recvr_id = request.POST.get('receiver')
+        c = Message(sender=request.user, reciever_id=recvr_id, text=msg)
         if msg != '':
             c.save()
-        msg_data = {'id': c.id, 'sender': c.sender_id, 'receiver': c.receiver, 'text': c.text}
+        msg_data = {'id': c.id, 'sender': c.sender_id, 'receiver': c.reciever_id, 'date': c.date, 'text': c.text}
         return JsonResponse(msg_data)
     else:
         return HttpResponse('Request must be POST.')
+
+
+@login_required
+def display_msg(request, reciever):
+    msg_data = Message.objects.filter(
+        Q(sender=request.user, reciever=reciever) | Q(sender=reciever, reciever=request.user)).order_by('id')
+
+    return render(request, 'talko/message.html', {'msgdata': msg_data, 'reciever': reciever})
